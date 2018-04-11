@@ -1,0 +1,3 @@
+En el diagrama de clases en la clase tarjeta, el atributo lstViaje figura como tipo Viaje. Creo que tendria que ser de tipo List<Viaje>
+
+todos los atributos figuran como publicos. Esta bien o tienen que ser privados?
