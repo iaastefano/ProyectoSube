@@ -1,0 +1,51 @@
+package testPrueba;
+
+public class TestPrueba {
+
+	public static void main(String[] args) {
+		''
+		apoyarTarjeta()
+		calendar fechahora
+		string tipoTransporte
+		string linea
+		string estacion
+		float precioBruto
+		int numtarjeta
+		
+		Transporte transporte = traerTransporte(tipoTransporte, linea, estacion)
+		
+		Tarjeta tarjeta = traerTarjeta(numtarjeta)
+		tarjeta.agregarboleto(transporte,fechahora,precioBruto)
+		
+
+		//en clase tarjeta
+		
+		agregarboleto(transporte,fechahora,preciobruto)
+		{
+			//definir a que viaje corresponde el boleto
+			ultimoviaje = lstviajes.ultimo();
+			if(ultimoviaje.boletossubida < 5 && funciones.diferenciahoras(ultimoviaje.getboleto(0).fechahora, fechahora) <= 2(horas))
+			{
+				ultimoviaje.agregarboleto(transporte,fechahora,preciobruto)
+			}
+			else {
+				lstviaje.add(new viaje().agregarboleto(transpoter,fechahora,preciobruto))
+			}
+		
+		}
+		
+		//en clase viaje
+		
+		agregarboleto(transporte,fechahora,preciobruto)
+		{
+			//definir si sube o baja
+			if
+			Boleto boleto = new boleto(transporte,fechahora,preciobruto)
+			
+		}
+		
+		
+		
+	}
+
+}
