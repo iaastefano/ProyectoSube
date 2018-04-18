@@ -10,6 +10,6 @@ public class Usuario {
 	private String pass;
 	private String email;
 	private boolean tarifaSocial;
-	private boolean estudiantil;
+	private Estudiantil Estudiantil;
 	private List<Tarjeta> lstTarjetas;
 }
