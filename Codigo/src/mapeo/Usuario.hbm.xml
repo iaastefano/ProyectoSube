@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/05/2018 01:34:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="datos.Usuario" table="USUARIO">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="IDUSUARIO" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="java.lang.String">
+            <column name="NOMBRE" />
+        </property>
+        <property name="apellido" type="java.lang.String">
+            <column name="APELLIDO" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="usuario" type="java.lang.String">
+            <column name="USUARIO" />
+        </property>
+        <property name="contrase&#241;a" type="java.lang.String">
+            <column name="CONTRASE&#209;A" />
+        </property>
+        <property name="dni" type="long">
+            <column name="DNI" />
+        </property>
+        <set name="tarjetas" table="USUARIO" inverse="false" lazy="true">
+            <key>
+                <column name="IDUSUARIO" />
+            </key>
+            <element type="string">
+                <column name="TARJETAS" />
+            </element>
+        </set>
+        <set name="usuarioTieneBeneficios" table="USUARIO" inverse="false" lazy="true">
+            <key>
+                <column name="IDUSUARIO" />
+            </key>
+            <element type="string">
+                <column name="USUARIOTIENEBENEFICIOS" />
+            </element>
+        </set>
+        <set name="descuentos" table="USUARIO" inverse="false" lazy="true">
+            <key>
+                <column name="IDUSUARIO" />
+            </key>
+            <element type="string">
+                <column name="DESCUENTOS" />
+            </element>
+        </set>
+        <set name="movimientos" table="USUARIO" inverse="false" lazy="true">
+            <key>
+                <column name="IDUSUARIO" />
+            </key>
+            <element type="string">
+                <column name="MOVIMIENTOS" />
+            </element>
+        </set>
+    </class>
+</hibernate-mapping>

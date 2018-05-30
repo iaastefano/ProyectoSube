@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proyectosube</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <mapping resource="mapeo/Tarjeta.hbm.xml"/>
+  <mapping resource="mapeo/Viaje.hbm.xml"/>
+  <mapping resource="mapeo/UsuarioTieneBeneficioId.hbm.xml"/>
+  <mapping resource="mapeo/UsuarioTieneBeneficio.hbm.xml"/>
+  <mapping resource="mapeo/Usuario.hbm.xml" />
+  <mapping resource="mapeo/Tarifatren.hbm.xml" />
+  <mapping resource="mapeo/Tarifacolectivo.hbm.xml" />
+  <mapping resource="mapeo/Tarifasubte.hbm.xml" />
+  <mapping resource="mapeo/Redsube.hbm.xml" />
+  <mapping resource="mapeo/Ramaltren.hbm.xml" />
+  <mapping resource="mapeo/RamalTieneEstacion.hbm.xml" />
+  <mapping resource="mapeo/Movimiento.hbm.xml" />
+  <mapping resource="mapeo/Lineatren.hbm.xml" />
+  <mapping resource="mapeo/Lineasubte.hbm.xml" />
+  <mapping resource="mapeo/Lineacolectivo.hbm.xml" />
+  <mapping resource="mapeo/Estacionsubte.hbm.xml" />
+  <mapping resource="mapeo/Estaciontren.hbm.xml" />
+  <mapping resource="mapeo/Descuento.hbm.xml" />
+  <mapping resource="mapeo/Boletotren.hbm.xml" />
+  <mapping resource="mapeo/Boletocolectivo.hbm.xml" />
+  <mapping resource="mapeo/Boletosubte.hbm.xml" />
+  <mapping resource="mapeo/Beneficio.hbm.xml" />
+ </session-factory>
+</hibernate-configuration>

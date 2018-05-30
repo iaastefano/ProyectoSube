@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/05/2018 01:34:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="datos.Estacionsubte" table="ESTACIONSUBTE">
+        <id name="idEstacionSubte" type="java.lang.Integer">
+            <column name="IDESTACIONSUBTE" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="lineasubte" class="datos.Lineasubte" fetch="join">
+            <column name="LINEASUBTE" />
+        </many-to-one>
+        <property name="nombre" type="java.lang.String">
+            <column name="NOMBRE" />
+        </property>
+        <set name="boletosubtes" table="ESTACIONSUBTE" inverse="false" lazy="true">
+            <key>
+                <column name="IDESTACIONSUBTE" />
+            </key>
+            <element type="string">
+                <column name="BOLETOSUBTES" />
+            </element>
+        </set>
+    </class>
+</hibernate-mapping>

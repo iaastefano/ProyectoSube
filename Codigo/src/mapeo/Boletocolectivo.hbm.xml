@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/05/2018 01:34:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="datos.Boletocolectivo" table="BOLETOCOLECTIVO">
+        <id name="idBoletoColectivo" type="java.lang.Integer">
+            <column name="IDBOLETOCOLECTIVO" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="lineacolectivo" class="datos.Lineacolectivo" fetch="join">
+            <column name="LINEACOLECTIVO" />
+        </many-to-one>
+        <many-to-one name="tarifacolectivo" class="datos.Tarifacolectivo" fetch="join">
+            <column name="TARIFACOLECTIVO" />
+        </many-to-one>
+        <many-to-one name="viaje" class="datos.Viaje" fetch="join">
+            <column name="VIAJE" />
+        </many-to-one>
+        <property name="descripcion" type="java.lang.String">
+            <column name="DESCRIPCION" />
+        </property>
+        <property name="precioFinal" type="float">
+            <column name="PRECIOFINAL" />
+        </property>
+    </class>
+</hibernate-mapping>

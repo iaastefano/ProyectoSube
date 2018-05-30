@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/05/2018 01:34:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="datos.Tarifatren" table="TARIFATREN">
+        <id name="idTarifaTren" type="java.lang.Integer">
+            <column name="IDTARIFATREN" />
+            <generator class="assigned" />
+        </id>
+        <property name="cantEstaciones" type="int">
+            <column name="CANTESTACIONES" />
+        </property>
+        <property name="descripcion" type="java.lang.String">
+            <column name="DESCRIPCION" />
+        </property>
+        <property name="precio" type="float">
+            <column name="PRECIO" />
+        </property>
+        <set name="boletotrens" table="TARIFATREN" inverse="false" lazy="true">
+            <key>
+                <column name="IDTARIFATREN" />
+            </key>
+            <element type="string">
+                <column name="BOLETOTRENS" />
+            </element>
+        </set>
+    </class>
+</hibernate-mapping>
