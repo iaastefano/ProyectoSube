@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/05/2018 01:34:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="datos.UsuarioTieneBeneficio" table="USUARIOTIENEBENEFICIO">
+        <id name="id" type="datos.UsuarioTieneBeneficioId">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="beneficio" class="datos.Beneficio" fetch="join">
+            <column name="BENEFICIO" />
+        </many-to-one>
+        <many-to-one name="usuario" class="datos.Usuario" fetch="join">
+            <column name="USUARIO" />
+        </many-to-one>
+        <property name="ultimaFechaCobro" type="java.util.Date">
+            <column name="ULTIMAFECHACOBRO" />
+        </property>
+    </class>
+</hibernate-mapping>

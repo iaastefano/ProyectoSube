@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/05/2018 01:34:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="datos.Viaje" table="VIAJE">
+        <id name="idViaje" type="java.lang.Integer">
+            <column name="IDVIAJE" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="redsube" class="datos.Redsube" fetch="join">
+            <column name="IDREDSUBE" />
+        </many-to-one>
+        <many-to-one name="tarjeta" class="datos.Tarjeta" fetch="join">
+            <column name="IDTARJETA" />
+        </many-to-one>
+        <property name="fechaHora" type="java.util.Date">
+            <column name="FECHAHORA" />
+        </property>
+        <set name="boletocolectivos" table="VIAJE" inverse="false" lazy="true">
+            <key>
+                <column name="IDVIAJE" />
+            </key>
+            <element type="string">
+                <column name="BOLETOCOLECTIVOS" />
+            </element>
+        </set>
+        <set name="boletosubtes" table="VIAJE" inverse="false" lazy="true">
+            <key>
+                <column name="IDVIAJE" />
+            </key>
+            <element type="string">
+                <column name="BOLETOSUBTES" />
+            </element>
+        </set>
+        <set name="boletotrens" table="VIAJE" inverse="false" lazy="true">
+            <key>
+                <column name="IDVIAJE" />
+            </key>
+            <element type="string">
+                <column name="BOLETOTRENS" />
+            </element>
+        </set>
+    </class>
+</hibernate-mapping>
