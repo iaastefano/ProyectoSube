@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/05/2018 01:34:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="datos.Tarjeta" table="TARJETA">
+        <id name="idTarjeta" type="java.lang.Integer">
+            <column name="IDTARJETA" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuario" class="datos.Usuario" fetch="join">
+            <column name="IDUSUARIO" />
+        </many-to-one>
+        <property name="nroTarjeta" type="java.lang.String">
+            <column name="NROTARJETA" />
+        </property>
+        <property name="saldo" type="float">
+            <column name="SALDO" />
+        </property>
+        <property name="activa" type="boolean">
+            <column name="ACTIVA" />
+        </property>
+        <set name="viajes" table="VIAJE" inverse="true" lazy="true">
+            <key>
+                <column name="IDTARJETA" />
+            </key>
+			<one-to-many class="datos.Viaje" />
+        </set>
+    </class>
+</hibernate-mapping>
