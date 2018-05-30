@@ -79,7 +79,9 @@ public class TarjetaDao {
 		try {
 			iniciaOperacion();
 			objeto = (Tarjeta) session.createQuery("from Tarjeta t where t.nroTarjeta = '" + nroTarjeta + "'").uniqueResult();
-			Hibernate.initialize(objeto.getViajes());
+			if(objeto != null){
+				Hibernate.initialize(objeto.getViajes());
+			}
 		} finally {
 			session.close();
 		}
