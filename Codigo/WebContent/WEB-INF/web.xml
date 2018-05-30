@@ -6,12 +6,21 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 	<display-name>Sube</display-name>
 	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>ControladorBuscarTarjeta</servlet-name>
+		<servlet-class>controladores.ControladorBuscarTarjeta</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorBuscarTarjeta</servlet-name>
+		<url-pattern>/BuscarTarjeta</url-pattern>
+	</servlet-mapping>
 
 </web-app>

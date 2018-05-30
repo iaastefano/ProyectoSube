@@ -6,7 +6,7 @@
     <class name="datos.Tarjeta" table="TARJETA">
         <id name="idTarjeta" type="java.lang.Integer">
             <column name="IDTARJETA" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="usuario" class="datos.Usuario" fetch="join">
             <column name="IDUSUARIO" />
